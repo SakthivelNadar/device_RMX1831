@@ -183,4 +183,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_TARGET_VNDK_VERSION := 28
 PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
+# ADB 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1
+
 $(call inherit-product, vendor/realme/RMX1831/RMX1831-vendor.mk)
