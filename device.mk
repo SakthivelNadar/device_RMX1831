@@ -134,7 +134,8 @@ PRODUCT_PACKAGES += \
 
 # VNDK-SP
 PRODUCT_PACKAGES += \
-    vndk-sp
+    vndk-ext \
+    vndk_package
 
 # Seccomp
 PRODUCT_COPY_FILES += \
