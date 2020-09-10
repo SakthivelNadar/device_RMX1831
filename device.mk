@@ -17,7 +17,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default
 
 # Audio policy configuration
-USE_XML_AUDIO_POLICY_CONF := 1
+#USE_XML_AUDIO_POLICY_CONF := 1
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
