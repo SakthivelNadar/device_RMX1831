@@ -9,12 +9,12 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit from RMX1831 device
-$(call inherit-product, device/realme/RMX1831/device.mk)
+#$(call inherit-product, device/realme/RMX1831/device.mk)
 
 PRODUCT_BRAND := realme
 PRODUCT_DEVICE := RMX1831
 PRODUCT_MANUFACTURER := realme
-PRODUCT_NAME := lineage_RMX1831
+PRODUCT_NAME := aosp_RMX1831
 PRODUCT_MODEL := realme U1
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
