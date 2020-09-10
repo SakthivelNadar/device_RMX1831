@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# Signapk
+PRODUCT_HOST_PACKAGES += \
+    signapk
+
 #WiFi
 PRODUCT_PACKAGES += \
     hostapd \
