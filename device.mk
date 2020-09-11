@@ -113,7 +113,8 @@ PRODUCT_PACKAGES += \
 # Binder
 PRODUCT_PACKAGES += \
     libhwbinder \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    libhidltransport
 
 # Signapk
 PRODUCT_HOST_PACKAGES += \
