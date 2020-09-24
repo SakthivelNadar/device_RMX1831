@@ -146,8 +146,8 @@ PRODUCT_PACKAGES += \
     libsuspend
 
 # Symbols 
-PRODUCT_PACKAGES += \
-    libshim_showlogo
+#PRODUCT_PACKAGES += \
+#    libshim_showlogo
 
 # Lights
 PRODUCT_PACKAGES += \
