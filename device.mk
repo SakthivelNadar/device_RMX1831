@@ -120,6 +120,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_HOST_PACKAGES += \
     signapk
 
+# Host packages
+PRODUCT_HOST_PACKAGES += \
+    avbtool \
+    brotli \
+    aapt2 \
+    deapexer \
+    debugfs \
+    zipalign \
+    apexer
+    
 #WiFi
 PRODUCT_PACKAGES += \
     hostapd \
