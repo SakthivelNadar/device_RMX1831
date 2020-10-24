@@ -1,0 +1,2 @@
+genfscon sysfs /devices/platform/spm u:object_r:sysfs_spm:s0
+

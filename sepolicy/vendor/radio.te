@@ -1,0 +1,3 @@
+# Purpose : mtk EM Power debug_log setting
+allow radio sysfs_spm:dir { search };
+
