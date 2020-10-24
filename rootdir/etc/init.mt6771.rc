@@ -1,4 +1,5 @@
 import /system/etc/init/init.safailnet.rc
+import /system/etc/init/hw/init.spm.rc
 
 service charger /charger
     class charger

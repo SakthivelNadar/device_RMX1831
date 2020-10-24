@@ -1,0 +1,15 @@
+on charger
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+    start spm_script
+
+on post-fs-data
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+    # SSPM log
+    chmod 0620 /sys/class/misc/sspm/sspm_mobile_log
+    chown root system /sys/class/misc/sspm/sspm_mobile_log
+    chmod 0440 /dev/sspm
+    chown root system /dev/sspm
+
