@@ -62,7 +62,8 @@ PRODUCT_PACKAGES += \
     init.safailnet.rc \
     init.recovery.mt6771.rc \
     init.recovery.usb.rc \
-    set_zram.sh
+    set_zram.sh \
+    init.spm.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \
