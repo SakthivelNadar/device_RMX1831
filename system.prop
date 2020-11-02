@@ -80,3 +80,19 @@ ro.config.alarm_vol_steps=15
 ro.config.system_vol_steps=15
 ro.config.ring_notification_vol_steps=15
 
+#IMS
+persist.vendor.mtk.volte.enable=1
+persist.vendor.mtk_ct_volte_support=1
+persist.vendor.volte_support=1
+persist.dbg.volte_avail_ovr=1 
+persist.dbg.vt_avail_ovr=1 
+persist.dbg.wfc_avail_ovr=1
+persist.vendor.vilte_support=1 
+persist.vendor.viwifi_support=1 
+persist.vendor.ims_support=1
+persist.vendor.mtk_dynamic_ims_switch=1
+ril.read.imsi=1
+ro.vendor.md_auto_setup_ims=1
+ro.vendor.mtk_rild_read_imsi=1
+persist.vendor.mims_support=2
+

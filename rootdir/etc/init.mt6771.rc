@@ -12,10 +12,6 @@ service charger /charger
     write /sys/class/android_usb/android0/enable 1
 
 on init
-    # Force disable all VoLTE support -- it requires intensive modification of frameworks
-    # without framework support it creates all sorts of problems. Disable it.
-    setprop persist.vendor.mtk.volte.enable 0
-    setprop persist.vendor.mtk_ct_volte_support 0
     
     # Custom overrides that need to happen right on boot
     # Override vendor fstab
@@ -59,8 +55,6 @@ on fs
     mount none /system/etc/fstab.mt6771 /vendor/etc/fstab.mt6771 bind
 
 on post-fs
-    # Override stock libmtk-ril.so with Hex-edited libmtk-ril.so to fix incoming calls
-    mount none /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
 
     # Disable OEM Lights
     mount none /dev/null vendor/lib/hw/lights.mt6771.so bind
@@ -69,6 +63,38 @@ on post-fs
     mount none /dev/null vendor/lib64/hw/lights.mt6771.so bind
     mount none /dev/null vendor/lib64/hw/android.hardware.light@2.0-impl-mediatek.so bind
     mount none /dev/null vendor/etc/init/android.hardware.light@2.0-service-mediatek.rc bind
+
+service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_crash /system/bin/logcat -b crash -D -f /cache/boot_lc_crash.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_kernel /system/bin/logcat -b kernel -D -f /cache/boot_lc_kernel.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on fs
+
+    # debug boot process
+
+    rm /cache/boot_lc_full.txt
+    rm /cache/boot_lc_crash.txt
+    rm /cache/boot_lc_kernel.txt
+    start boot_lc
+    start boot_lc_kernel
+    start boot_lc_crash
 
 service set_zram /vendor/bin/sh /system/etc/init/set_zram.sh
     class late_start
@@ -80,3 +106,14 @@ service set_zram /vendor/bin/sh /system/etc/init/set_zram.sh
 on property:sys.boot_completed=1
     start set_zram
 
+on post-fs-boot
+
+on property:sys.boot_completed=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
+
+on property:dev.bootcomplete=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
