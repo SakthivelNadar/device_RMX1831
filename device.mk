@@ -171,6 +171,7 @@ PRODUCT_BOOT_JARS += \
     mediatek-telephony-common
 
 # Properties
+include $(LOCAL_PATH)/product_prop.mk
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 $(call inherit-product, vendor/realme/RMX1831/RMX1831-vendor.mk)
