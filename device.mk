@@ -156,16 +156,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.RMX1831
 
 # IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml
-
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
-
 PRODUCT_BOOT_JARS += \
-    telephony-ext \
     mediatek-common \
     mediatek-framework \
     mediatek-ims-base \
