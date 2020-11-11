@@ -41,9 +41,6 @@ VENDOR_SECURITY_PATCH := 2020-05-05
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
-# Enable dexpreopt to speed boot time
-WITH_DEXPREOPT := true
-
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.configfs=true androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40078000
