@@ -155,8 +155,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.RMX1831
 
+# Overlay from mtk-telephony-ext
+include vendor/mediatek/hardware/telephony-ext/overlay.mk
+
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext \
+    mtk-telephony-ext
+    
 # IMS
-PRODUCT_BOOT_JARS += \
+PRODUCT_BOOT_JARS += \    
+    telephony-ext \
     mediatek-common \
     mediatek-framework \
     mediatek-ims-base \
