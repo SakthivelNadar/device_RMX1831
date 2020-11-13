@@ -164,6 +164,10 @@ PRODUCT_PACKAGES += \
     mtk-telephony-ext
     
 # IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml
+
 PRODUCT_BOOT_JARS += \    
     telephony-ext \
     mediatek-common \
